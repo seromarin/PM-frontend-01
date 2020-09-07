@@ -12,7 +12,7 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "npm run lint"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "repository": {
@@ -40,6 +40,7 @@
     "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.11.0",
     "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "sass": "^1.26.10",
