@@ -1,11 +1,13 @@
 {
-  "name": "PM-frontend-01",
+  "name": "pm-frontend-01",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
+    "start:dev": "webpack-dev-server --mode=development"
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,13 @@
   },
   "homepage": "https://github.com/seromarin/PM-frontend-01#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^4.4.1",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
