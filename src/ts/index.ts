@@ -6,8 +6,8 @@ import '../scss/index.scss'
  * @param a - Array of numbers
  * @returns - The summ of all numbers
  */
-export function sum(...a: number[]): number {
+function sum(...a: number[]): number {
   return a.reduce((acc, val) => acc + val, 0)
 }
 
-// export { sum }
+export { sum }
