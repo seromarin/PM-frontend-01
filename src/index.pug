@@ -1,3 +1,51 @@
 extend templates/layout.pug
+
 block content
-    h1 Hola Mundo
+
+    -var menuItems = ["home", "acerca de", "portafolio", "blog", "contacto"]
+    -var articles = [{ name: "Las bondades del HTML5" }, { name: "HTML5 en dispositivos móviles" }, { name: "Internet Explorer es una basura" }, { name: "Diseño web en pantalla retina" }]
+    -var socialMedias = ["twitter", "facebook", "spotify", "youtube"]
+
+    header.header
+        h1.header__title Ejercicio Web
+        h2.header__subtitle Página creada con HTML5
+    nav.navbar
+        ul.navbar__list
+            each menuItem in menuItems
+                li.navbar__list-item
+                    a(href=menuItem) #{menuItem}
+    
+    section.content
+        article.main-article
+            span.highlight Entrada destacada
+            h3.main-article__title Crea un sitio web usando HTML5
+            p.main-article__resume Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate minus corrupti nihil, earum quaerat suscipit distinctio minima ea voluptatibus? Nobis quos delectus illum ipsa voluptatibus excepturi. Rem asperiores cumque quae?
+            figcaption.main-article__image
+                img(src="https://programacion.net/files/article/20160727120738_javascript.png")
+
+        .latest-articles
+            each article in articles
+                article.article
+                    .article__details
+                        p.article__details__date El 29 de Octubre de 2012
+                        p.article__details__author
+                            | Por 
+                            a(href="#") Ernesto G. Bustamante
+                        p.article__details__comments 3 comentarios
+                    .article__main
+                        h4.article__main__title #{article.name}
+                        p.article__main__resume Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vero pariatur eius voluptas ratione consequuntur nemo. Dignissimos perspiciatis consequatur quisquam sunt earum ut fugit sapiente doloremque, minima aliquam corrupti velit?
+                        p.article__main__read-more Leer más
+        
+        footer.section__footer
+            figcaption.section__footer__img
+                img(src="https://i.insider.com/5b33968e5e48ec1f008b4588?width=1200&format=jpeg")
+            p.section__footer__content Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur laborum blanditiis dolores numquam eaque ipsum itaque minima, rem ipsam debitis rerum illo dignissimos eveniet impedit totam cumque facere quos! Dolores!
+    
+    footer.footer
+        .footer__social-media
+            each socialMedia in socialMedias
+                p #{socialMedia}
+        .footer__copyright
+            p 2012. Todos los derechos reservados.
+
